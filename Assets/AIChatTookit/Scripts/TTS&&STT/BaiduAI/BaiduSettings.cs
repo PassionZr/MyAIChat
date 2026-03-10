@@ -1,4 +1,4 @@
-using Newtonsoft.Json.Linq;
+ï»¿using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,25 +6,25 @@ using UnityEngine.Networking;
 
 public class BaiduSettings : MonoBehaviour
 {
-    #region ²ÎÊı¶¨Òå
+    #region å‚æ•°å®šä¹‰
     /// <summary>
     /// API Key
     /// </summary>
-    [Header("ÌîĞ´Ó¦ÓÃµÄAPI Key")] public string m_API_key = string.Empty;
+    [Header("å¡«å†™åº”ç”¨çš„API Key")] public string m_API_key = string.Empty;
     /// <summary>
     /// Secret Key
     /// </summary>
-    [Header("ÌîĞ´Ó¦ÓÃµÄSecret Key")] public string m_Client_secret = string.Empty;
+    [Header("å¡«å†™åº”ç”¨çš„Secret Key")] public string m_Client_secret = string.Empty;
     /// <summary>
-    /// ÊÇ·ñ´Ó·şÎñÆ÷»ñÈ¡token
+    /// æ˜¯å¦ä»æœåŠ¡å™¨è·å–token
     /// </summary>
     [SerializeField] private bool m_GetTokenFromServer = true;
     /// <summary>
-    /// tokenÖµ
+    /// tokenå€¼
     /// </summary>
     public string m_Token = string.Empty;
     /// <summary>
-    /// »ñÈ¡TokenµÄµØÖ·
+    /// è·å–Tokençš„åœ°å€
     /// </summary>
     [SerializeField] private string m_AuthorizeURL = "https://aip.baidubce.com/oauth/2.0/token";
     #endregion
@@ -41,7 +41,7 @@ public class BaiduSettings : MonoBehaviour
 
 
     /// <summary>
-    /// »ñÈ¡µ½token
+    /// è·å–åˆ°token
     /// </summary>
     /// <param name="_token"></param>
     private void GetTokenAction(string _token)
@@ -50,13 +50,13 @@ public class BaiduSettings : MonoBehaviour
     }
 
     /// <summary>
-    /// »ñÈ¡tokenµÄ·½·¨
+    /// è·å–tokençš„æ–¹æ³•
     /// </summary>
     /// <param name="_callback"></param>
     /// <returns></returns>
     private IEnumerator GetToken(System.Action<string> _callback)
     {
-        //»ñÈ¡tokenµÄapiµØÖ·
+        //è·å–tokençš„apiåœ°å€
         string _token_url = string.Format(m_AuthorizeURL + "?client_id={0}&client_secret={1}&grant_type=client_credentials"
             , m_API_key, m_Client_secret);
 
@@ -77,7 +77,7 @@ public class BaiduSettings : MonoBehaviour
 
 
     /// <summary>
-    /// ·µ»ØµÄtoken
+    /// è¿”å›çš„token
     /// </summary>
     [System.Serializable]
     public class TokenInfo

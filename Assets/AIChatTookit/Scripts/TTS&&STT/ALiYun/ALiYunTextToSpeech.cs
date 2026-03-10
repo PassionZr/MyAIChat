@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -8,7 +8,7 @@ public class ALiYunTextToSpeech : TTS
     #region Params
 
     [SerializeField] private AliTokenHelper m_AliHelper;//token
-    [SerializeField] private PostSettings m_PostData;//·¢ËÍ±¨ÎÄ
+    [SerializeField] private PostSettings m_PostData;//å‘é€æŠ¥æ–‡
 
     #endregion
 
@@ -22,7 +22,7 @@ public class ALiYunTextToSpeech : TTS
     #region Public Method
 
     /// <summary>
-    /// ÓïÒôºÏ³É£¬·µ»ØºÏ³ÉÎÄ±¾
+    /// è¯­éŸ³åˆæˆï¼Œè¿”å›åˆæˆæ–‡æœ¬
     /// </summary>
     /// <param name="_msg"></param>
     /// <param name="_callback"></param>
@@ -36,7 +36,7 @@ public class ALiYunTextToSpeech : TTS
     #region Private Method
 
     /// <summary>
-    /// ÓïÒôºÏ³ÉµÄ·½·¨
+    /// è¯­éŸ³åˆæˆçš„æ–¹æ³•
     /// </summary>
     /// <param name="_msg"></param>
     /// <param name="callback"></param>
@@ -68,24 +68,24 @@ public class ALiYunTextToSpeech : TTS
             }
             else
             {
-                Debug.LogError("ÓïÒôºÏ³ÉÊ§°Ü: " + request.error);
+                Debug.LogError("è¯­éŸ³åˆæˆå¤±è´¥: " + request.error);
             }
 
 
         }
 
         stopwatch.Stop();
-        Debug.Log("°¢ÀïÓïÒôºÏ³ÉºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        Debug.Log("é˜¿é‡Œè¯­éŸ³åˆæˆè€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
     }
 
 
     #endregion
 
 
-    #region Êı¾İ¶¨Òå
+    #region æ•°æ®å®šä¹‰
 
     /// <summary>
-    /// ÓïÒôºÏ³ÉÅäÖÃ
+    /// è¯­éŸ³åˆæˆé…ç½®
     /// </summary>
     [System.Serializable]
     public class PostSettings
@@ -95,10 +95,10 @@ public class ALiYunTextToSpeech : TTS
         public string token = string.Empty;
         public string format = "mp3";//PCM/WAV/MP3
         public int sample_rate = 16000;//16000 , 8000
-        public string voice = "zhixiaobai";//ÒôÉ« 
-        public int volume = 50;//ÒôÁ¿£¬È¡Öµ·¶Î§£º0~100
-        public int speech_rate = 0;//ÓïËÙ£¬È¡Öµ·¶Î§£º-500~500
-        public int pitch_rate = 0;//Óïµ÷£¬È¡Öµ·¶Î§£º-500~500
+        public string voice = "zhixiaobai";//éŸ³è‰² 
+        public int volume = 50;//éŸ³é‡ï¼Œå–å€¼èŒƒå›´ï¼š0~100
+        public int speech_rate = 0;//è¯­é€Ÿï¼Œå–å€¼èŒƒå›´ï¼š-500~500
+        public int pitch_rate = 0;//è¯­è°ƒï¼Œå–å€¼èŒƒå›´ï¼š-500~500
     }
 
 

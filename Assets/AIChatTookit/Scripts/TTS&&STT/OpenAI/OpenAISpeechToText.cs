@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -7,7 +7,7 @@ public class OpenAISpeechToText : STT
 {
 
     /// <summary>
-    /// openaiµÄapi key
+    /// openaiçš„api key
     /// </summary>
     [SerializeField] private string api_key;
 
@@ -17,7 +17,7 @@ public class OpenAISpeechToText : STT
     }
 
     /// <summary>
-    /// openaiÓïÒôÊ¶±ğ
+    /// openaiè¯­éŸ³è¯†åˆ«
     /// </summary>
     /// <param name="_clip"></param>
     /// <param name="_callback"></param>
@@ -28,7 +28,7 @@ public class OpenAISpeechToText : STT
     }
 
     /// <summary>
-    /// ·¢ËÍÊı¾İµ½api
+    /// å‘é€æ•°æ®åˆ°api
     /// </summary>
     /// <param name="audioBytes"></param>
     /// <param name="_callback"></param>
@@ -56,11 +56,11 @@ public class OpenAISpeechToText : STT
         }
 
         stopwatch.Stop();
-        Debug.Log("OpenAIÓïÒôÊ¶±ğºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        Debug.Log("OpenAIè¯­éŸ³è¯†åˆ«è€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
 
     }
 
-    #region Êı¾İ¶¨Òå
+    #region æ•°æ®å®šä¹‰
 
     [Serializable]public class Response
     {

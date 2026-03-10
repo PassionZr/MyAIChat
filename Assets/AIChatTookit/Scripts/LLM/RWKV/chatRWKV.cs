@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +12,7 @@ public class chatRWKV : LLM
     }
 
     /// <summary>
-    /// AIÉè¶¨
+    /// AIè®¾å®š
     /// </summary>
     public string m_SystemSetting = string.Empty;
     /// <summary>
@@ -22,12 +22,12 @@ public class chatRWKV : LLM
 
     private void Start()
     {
-        //ÔËĞĞÊ±£¬Ìí¼ÓAIÉè¶¨
+        //è¿è¡Œæ—¶ï¼Œæ·»åŠ AIè®¾å®š
         m_DataList.Add(new SendData("system", m_SystemSetting));
     }
 
     /// <summary>
-    /// ·¢ËÍÏûÏ¢
+    /// å‘é€æ¶ˆæ¯
     /// </summary>
     /// <returns></returns>
     public override void PostMsg(string _msg, Action<string> _callback)
@@ -36,7 +36,7 @@ public class chatRWKV : LLM
     }
 
     /// <summary>
-    /// µ÷ÓÃ½Ó¿Ú
+    /// è°ƒç”¨æ¥å£
     /// </summary>
     /// <param name="_postWord"></param>
     /// <param name="_callback"></param>
@@ -70,7 +70,7 @@ public class chatRWKV : LLM
                 {
 
                     string _backMsg = _textback.choices[0].message.content;
-                    //Ìí¼Ó¼ÇÂ¼
+                    //æ·»åŠ è®°å½•
                     m_DataList.Add(new SendData("assistant", _backMsg));
                     _callback(_backMsg);
                 }
@@ -82,11 +82,11 @@ public class chatRWKV : LLM
             }
             
             stopwatch.Stop();
-            Debug.Log("RWKVºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+            Debug.Log("RWKVè€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
         }
     }
 
-    #region Êı¾İ°ü
+    #region æ•°æ®åŒ…
 
     [Serializable]
     public class PostData

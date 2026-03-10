@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -7,7 +7,7 @@ public class AzureSpeechToText : STT
 {
 
     /// <summary>
-    /// AzureÅäÖÃÏî
+    /// Azureé…ç½®é¡¹
     /// </summary>
     [SerializeField] private AzureSettings m_AzureSettings;
     public string mode = "conversation";
@@ -20,7 +20,7 @@ public class AzureSpeechToText : STT
         GetUrl();
     }
     /// <summary>
-    /// Æ´url
+    /// æ‹¼url
     /// </summary>
     private void GetUrl()
     {
@@ -33,7 +33,7 @@ public class AzureSpeechToText : STT
             m_AzureSettings.language;
     }
     /// <summary>
-    /// ÓïÒôÊ¶±ğ
+    /// è¯­éŸ³è¯†åˆ«
     /// </summary>
     /// <param name="_clip"></param>
     /// <param name="_callback"></param>
@@ -44,7 +44,7 @@ public class AzureSpeechToText : STT
     }
 
     /// <summary>
-    /// ÓïÒôÊ¶±ğ
+    /// è¯­éŸ³è¯†åˆ«
     /// </summary>
     /// <param name="_audioData"></param>
     /// <param name="_callback"></param>
@@ -55,7 +55,7 @@ public class AzureSpeechToText : STT
 
 
     /// <summary>
-    /// Ê¶±ğÓïÒô
+    /// è¯†åˆ«è¯­éŸ³
     /// </summary>
     /// <param name="audioData"></param>
     /// <param name="_callback"></param>
@@ -92,7 +92,7 @@ public class AzureSpeechToText : STT
         _callback(recognizedText);
 
         stopwatch.Stop();
-        Debug.Log("AzureÓïÒôÊ¶±ğºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        Debug.Log("Azureè¯­éŸ³è¯†åˆ«è€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
     }
 }
 

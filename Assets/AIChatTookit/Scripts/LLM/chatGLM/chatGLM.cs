@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+ï»¿using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,12 +14,12 @@ public class chatGLM : LLM
 
  
     /// <summary>
-    /// ÀúÊ·¶Ô»°
+    /// å†å²å¯¹è¯
     /// </summary>
     [SerializeField] private List<List<string>> m_History = new List<List<string>>();
  
     /// <summary>
-    /// ·¢ËÍÏûÏ¢
+    /// å‘é€æ¶ˆæ¯
     /// </summary>
     /// <returns></returns>
     public override void PostMsg(string _msg, Action<string> _callback)
@@ -29,7 +29,7 @@ public class chatGLM : LLM
 
 
     /// <summary>
-    /// ·¢ËÍÊı¾İ
+    /// å‘é€æ•°æ®
     /// </summary> 
     /// <param name="_postWord"></param>
     /// <param name="_callback"></param>
@@ -58,11 +58,11 @@ public class chatGLM : LLM
                 string _msg = request.downloadHandler.text;
                 ResponseData response = JsonConvert.DeserializeObject<ResponseData>(_msg);
 
-                //¼ÇÂ¼ÀúÊ·¶Ô»°
+                //è®°å½•å†å²å¯¹è¯
                 m_History = response.history;
-                //Ìí¼Ó¼ÇÂ¼
+                //æ·»åŠ è®°å½•
                 m_DataList.Add(new SendData("assistant", _msg));
-                //»Øµ÷
+                //å›è°ƒ
                 _callback(response.response);
 
             }
@@ -70,10 +70,10 @@ public class chatGLM : LLM
         }
 
         stopwatch.Stop();
-        Debug.Log("chatGLMºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        Debug.Log("chatGLMè€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
     }
 
-    #region ±¨ÎÄ¶¨Òå
+    #region æŠ¥æ–‡å®šä¹‰
 
     [Serializable]
     private class RequestData

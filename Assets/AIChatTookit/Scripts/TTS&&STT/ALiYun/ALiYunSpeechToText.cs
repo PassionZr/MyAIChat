@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -21,7 +21,7 @@ public class ALiYunSpeechToText : STT
     #region Method
 
     /// <summary>
-    /// ÓïÒôÊ¶±ğ
+    /// è¯­éŸ³è¯†åˆ«
     /// </summary>
     /// <param name="_clip"></param>
     /// <param name="_callback"></param>
@@ -32,7 +32,7 @@ public class ALiYunSpeechToText : STT
 
 
     /// <summary>
-    /// °¢ÀïÓïÒôÊ¶±ğ
+    /// é˜¿é‡Œè¯­éŸ³è¯†åˆ«
     /// </summary>
     /// <param name="_callback"></param>
     /// <returns></returns>
@@ -42,7 +42,7 @@ public class ALiYunSpeechToText : STT
 
         string asrResult = string.Empty;
 
-        //ÒôÆµ×ªÎªByte[]
+        //éŸ³é¢‘è½¬ä¸ºByte[]
         float[] samples = new float[_audioClip.samples];
         _audioClip.GetData(samples, 0);
         var samplesShort = new short[samples.Length];
@@ -77,24 +77,24 @@ public class ALiYunSpeechToText : STT
                 RecogizeCallback _data = JsonUtility.FromJson<RecogizeCallback>(asrResult);
                 if(_data.status== 20000000)
                 {
-                    Debug.Log("°¢ÀïÓïÒôÊ¶±ğ·µ»Ø£º" + _data.result);
+                    Debug.Log("é˜¿é‡Œè¯­éŸ³è¯†åˆ«è¿”å›ï¼š" + _data.result);
                     _callback(_data.result);
                 }
                 else
                 {
-                    Debug.LogError("ÓïÒôÊ¶±ğÊ§°Ü£º"+ _data.message);
+                    Debug.LogError("è¯­éŸ³è¯†åˆ«å¤±è´¥ï¼š"+ _data.message);
                 }
 
             }
         }
 
         stopwatch.Stop();
-        Debug.Log("°¢ÀïÓïÒôÊ¶±ğºÄÊ±£º" + stopwatch.Elapsed.TotalSeconds);
+        Debug.Log("é˜¿é‡Œè¯­éŸ³è¯†åˆ«è€—æ—¶ï¼š" + stopwatch.Elapsed.TotalSeconds);
     }
 
     #endregion
 
-    #region Êı¾İ¶¨Òå
+    #region æ•°æ®å®šä¹‰
 
     [Serializable]
     public class RecogizeCallback

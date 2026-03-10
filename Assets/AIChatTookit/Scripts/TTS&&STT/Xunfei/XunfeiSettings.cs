@@ -1,25 +1,25 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class XunfeiSettings : MonoBehaviour
 {
-    #region 参数
+    #region 鍙傛暟
     /// <summary>
-    /// 讯飞的AppID
+    /// 璁鐨凙ppID
     /// </summary>
-    [Header("填写app id")]
-    [SerializeField] public string m_AppID = "讯飞的AppID";
+    [Header("濉啓app id")]
+    [SerializeField] public string m_AppID = "璁鐨凙ppID";
     /// <summary>
-    /// 讯飞的APIKey
+    /// 璁鐨凙PIKey
     /// </summary>
-    [Header("填写api key")]
-    [SerializeField] public string m_APIKey = "讯飞的APIKey";
+    [Header("濉啓api key")]
+    [SerializeField] public string m_APIKey = "璁鐨凙PIKey";
     /// <summary>
-    /// 讯飞的APISecret
+    /// 璁鐨凙PISecret
     /// </summary>
-    [Header("填写secret key")]
-    [SerializeField] public string m_APISecret = "讯飞的APISecret";
+    [Header("濉啓secret key")]
+    [SerializeField] public string m_APISecret = "璁鐨凙PISecret";
 
     #endregion
 }

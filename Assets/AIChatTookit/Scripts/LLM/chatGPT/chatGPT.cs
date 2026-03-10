@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -15,25 +15,25 @@ public class chatGPT : LLM
     /// api key
     /// </summary>
     [SerializeField] private string api_key;
-    //ÅäÖÃ²ÎÊı
+    //é…ç½®å‚æ•°
     [SerializeField] private PostData m_PostDataSetting;
     /// <summary>
-    /// ·¢ËÍÏûÏ¢
+    /// å‘é€æ¶ˆæ¯
     /// </summary>
     /// <returns></returns>
     public override void PostMsg(string _msg,Action<string> _callback)
     {
-        //ÌáÊ¾´Ê
-        string message = "µ±Ç°Îª½ÇÉ«µÄÈËÎïÉè¶¨£º" + m_Prompt +
-            " »Ø´ğµÄÓïÑÔ£º" + lan +
-            " ½ÓÏÂÀ´ÊÇÎÒµÄÌáÎÊ£º" + _msg;
+        //æç¤ºè¯
+        string message = "å½“å‰ä¸ºè§’è‰²çš„äººç‰©è®¾å®šï¼š" + m_Prompt +
+            " å›ç­”çš„è¯­è¨€ï¼š" + lan +
+            " æ¥ä¸‹æ¥æ˜¯æˆ‘çš„æé—®ï¼š" + _msg;
 
 
         StartCoroutine(Request(message, _callback));
     }
 
     /// <summary>
-    /// µ÷ÓÃ½Ó¿Ú·µ»ØÊı¾İ
+    /// è°ƒç”¨æ¥å£è¿”å›æ•°æ®
     /// </summary>
     /// <param name="_postWord"></param>
     /// <param name="_callback"></param>
@@ -71,7 +71,7 @@ public class chatGPT : LLM
                 if (_textback != null && _textback.choices.Count > 0)
                 {
 
-                    string _backMsg = Regex.Replace(_textback.choices[0].text, @"[\r\n]", "").Replace("£¿", "");
+                    string _backMsg = Regex.Replace(_textback.choices[0].text, @"[\r\n]", "").Replace("ï¼Ÿ", "");
                     _callback(_backMsg);
                 }
 
@@ -81,7 +81,7 @@ public class chatGPT : LLM
 
     }
 
-    #region Êı¾İ¶¨Òå
+    #region æ•°æ®å®šä¹‰
 
     [System.Serializable]
     public class PostData
@@ -96,7 +96,7 @@ public class chatGPT : LLM
         public string stop;
     }
     /// <summary>
-    /// ·µ»ØµÄĞÅÏ¢
+    /// è¿”å›çš„ä¿¡æ¯
     /// </summary>
     [System.Serializable]
     public class TextCallback

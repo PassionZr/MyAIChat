@@ -1,19 +1,19 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Wake-on-voice ÓïÒô»½ĞÑ baseÀà
+/// Wake-on-voice è¯­éŸ³å”¤é†’ baseç±»
 /// </summary>
 public class WOV : MonoBehaviour
 {
 
     /// <summary>
-    /// ¹Ø¼ü´Ê»Øµ÷
+    /// å…³é”®è¯å›è°ƒ
     /// </summary>
     protected Action<string> OnKeywordRecognizer;
     /// <summary>
-    /// °ó¶¨»½ĞÑ»Øµ÷
+    /// ç»‘å®šå”¤é†’å›è°ƒ
     /// </summary>
     /// <param name=""></param>
     /// <param name="_callback"></param>
@@ -22,21 +22,21 @@ public class WOV : MonoBehaviour
         OnKeywordRecognizer += _callback;
     }
     /// <summary>
-    /// ¿ªÊ¼Ê¶±ğ
+    /// å¼€å§‹è¯†åˆ«
     /// </summary>
     public virtual void StartRecognizer()
     {
 
     }
     /// <summary>
-    /// ½áÊøÊ¶±ğ
+    /// ç»“æŸè¯†åˆ«
     /// </summary>
     public virtual void StopRecognizer()
     {
 
     }
     /// <summary>
-    /// »½ĞÑ´Ê»Øµ÷
+    /// å”¤é†’è¯å›è°ƒ
     /// </summary>
     /// <param name="_msg"></param>
     protected virtual void OnAwakeOnVoice(string _msg)

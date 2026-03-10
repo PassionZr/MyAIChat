@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.IO;
 using UnityEngine.Networking;
 using System;
@@ -46,20 +46,20 @@ public static class WavUtility
     }
 
     /// <summary>
-    /// byte[] ×ª»»ÎªaudioClip
+    /// byte[] è½¬æ¢ä¸ºaudioClip
     /// </summary>
     /// <param name="bytes"></param>
     /// <param name="sampleRate"></param>
     /// <returns></returns>
     public static AudioClip ConvertBytesToAudioClip(byte[] bytes, int sampleRate)
     {
-        // ½«byteÊı×é×ª»»ÎªfloatÊı×é
+        // å°†byteæ•°ç»„è½¬æ¢ä¸ºfloatæ•°ç»„
         float[] floatArray = ConvertBytesToFloatArray(bytes);
 
-        // ´´½¨AudioClip
+        // åˆ›å»ºAudioClip
         AudioClip audioClip = AudioClip.Create("GeneratedAudioClip", floatArray.Length, 1, sampleRate, false);
 
-        // ÉèÖÃÊı¾İ
+        // è®¾ç½®æ•°æ®
         audioClip.SetData(floatArray, 0);
 
         return audioClip;
@@ -78,28 +78,28 @@ public static class WavUtility
         return floatArray;
     }
 
-    #region ±£´æÒôÆµÎÄ¼ş
+    #region ä¿å­˜éŸ³é¢‘æ–‡ä»¶
     public static void SaveAudioClip(AudioClip clip, string path, string name)
     {
-        // »ñÈ¡ÒôÆµÊı¾İ
+        // è·å–éŸ³é¢‘æ•°æ®
         float[] samples = new float[clip.samples];
         clip.GetData(samples, 0);
 
-        // ½«ÒôÆµÊı¾İ×ª»»Îª×Ö½ÚÊı×é
+        // å°†éŸ³é¢‘æ•°æ®è½¬æ¢ä¸ºå­—èŠ‚æ•°ç»„
         byte[] byteArray = ConvertFloatArrayToByteArray(samples);
 
-        // ´´½¨±£´æÂ·¾¶
+        // åˆ›å»ºä¿å­˜è·¯å¾„
         string filePath = Path.Combine(path, name);
 
-        // ´´½¨ÎÄ¼şÁ÷²¢Ğ´ÈëÎÄ¼ş
+        // åˆ›å»ºæ–‡ä»¶æµå¹¶å†™å…¥æ–‡ä»¶
         using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
         {
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                // Ğ´ÈëWAVÎÄ¼şÍ·
+                // å†™å…¥WAVæ–‡ä»¶å¤´
                 WriteWavHeader(writer, clip);
 
-                // Ğ´ÈëÒôÆµÊı¾İ
+                // å†™å…¥éŸ³é¢‘æ•°æ®
                 writer.Write(byteArray);
             }
         }

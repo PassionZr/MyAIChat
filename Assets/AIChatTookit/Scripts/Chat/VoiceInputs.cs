@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +7,18 @@ public class VoiceInputs : MonoBehaviour
 {
 
     /// <summary>
-    /// Â¼ÖÆµÄÒôÆµ³¤¶È
+    /// å½•åˆ¶çš„éŸ³é¢‘é•¿åº¦
     /// </summary>
     public int m_RecordingLength = 5;
 
     public AudioClip recording;
 
     /// <summary>
-    /// WebGL¸¨ÖúÀà
+    /// WebGLè¾…åŠ©ç±»
     /// </summary>
     [SerializeField]private SignalManager signalManager;
     /// <summary>
-    /// ¿ªÊ¼Â¼ÖÆÉùÒô
+    /// å¼€å§‹å½•åˆ¶å£°éŸ³
     /// </summary>
     public void StartRecordAudio()
     {
@@ -33,7 +33,7 @@ public class VoiceInputs : MonoBehaviour
     }
 
     /// <summary>
-    /// ½áÊøÂ¼ÖÆ£¬·µ»ØaudioClip
+    /// ç»“æŸå½•åˆ¶ï¼Œè¿”å›audioClip
     /// </summary>
     /// <param name="_callback"></param>
     public void StopRecordAudio(Action<AudioClip> _callback)
