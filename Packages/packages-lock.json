@@ -60,6 +60,14 @@
       "dependencies": {},
       "url": "https://packages.unity.cn"
     },
+    "com.unity.ide.windsurf": {
+      "version": "file:com.unity.ide.windsurf-master/com.unity.ide.windsurf-master",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      }
+    },
     "com.unity.performance.profile-analyzer": {
       "version": "1.2.2",
       "depth": 1,
